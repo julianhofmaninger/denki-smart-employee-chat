@@ -1,0 +1,45 @@
+@import "../../../theme/colors.scss";
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  color: $text;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background 0.3s, opacity 0.3s;
+  .hover-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    width: 0px;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .loading-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    width: 0px;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .loading-icon.isLoading {
+    opacity: 1;
+    width: 18px;
+    margin-left: 8px;
+  }
+}
+.icon-button:hover .hover-icon {
+  opacity: 1;
+  width: 16px;
+  margin-left: 5px;
+  flex-shrink: 0;
+}
+.icon-button:hover .hover-icon.isLoading {
+  opacity: 0;
+  width: 0px;
+  margin-left: 0px;
+}
