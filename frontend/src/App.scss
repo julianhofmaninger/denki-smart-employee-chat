@@ -1,0 +1,12 @@
+@import './theme/colors.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  background: #FFF2F2;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100vw;
+  width: 100svw;
+  font-family: 'Poppins', sans-serif;
+}
