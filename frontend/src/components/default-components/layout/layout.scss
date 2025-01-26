@@ -1,0 +1,67 @@
+@import "./navbar/navbar-size.scss";
+@import "../../../theme/colors.scss";
+@import "./screen-sizes/screen-sizes.scss";
+.layout-container {
+  height: 100vh;
+  height: 100svh;
+  width: 100vw;
+  width: 100svw;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: $background;
+
+  .layout-scroll-container {
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    .main-area {
+      padding: 10px 20px;
+      width: 100%;
+      position: relative;
+      z-index: 9;
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: $grey !important;
+      }
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: $darkgrey !important;
+      }
+    }
+    .navbar-area {
+      ::-webkit-scrollbar {
+        width: 3px !important;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: $grey !important;
+      }
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: $darkgrey !important;
+      }
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      z-index: 200;
+    }
+  }
+  .sidebar-area {
+    ::-webkit-scrollbar {
+      width: 3px !important;
+      height: 3px !important;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: $grey !important;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: $darkgrey !important;
+    }
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    z-index: 10;
+  }
+}
