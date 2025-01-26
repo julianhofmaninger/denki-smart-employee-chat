@@ -1,0 +1,146 @@
+@import "../../theme/colors.scss";
+@import "../../components/default-components/layout/screen-sizes/screen-sizes.scss";
+
+.authentication-container {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  width: 90%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  // Header
+  .authentication-header-container {
+    display: none;
+    align-self: center;
+    z-index: 10;
+    margin-right: 15%;
+    .authentication-header-inner-container {
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      color: #e5e7eb;
+      .header-welcome {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        color: white;
+        font-weight: 600;
+        font-size: 2.5rem;
+      }
+      .description {
+        padding-right: 0.75rem;
+        color: $darkgrey;
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+    }
+  }
+  @media (min-width: $lg) {
+    .authentication-header-container {
+      display: block;
+    }
+  }
+
+  @media (min-width: $sm) {
+    .authentication-header-container {
+      max-width: 36rem;
+    }
+  }
+
+  @media (min-width: $xl) {
+    .authentication-header-container {
+      max-width: 27rem;
+    }
+  }
+
+  @media (min-width: $lg) {
+    .authentication-header-container {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+    }
+  }
+
+  // Login Form
+  .authentication-login-form-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    max-width: 90vw;
+    width: 24rem;
+    flex-shrink: 0;
+    z-index: 10;
+    .authentication-login-form-inner-container {
+      padding: 2rem 3rem;
+      background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 1.5rem;
+      width: 100%;
+      // Header
+      .authentication-login-form-header {
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: $darkgrey;
+        margin-bottom: 1.75rem;
+      }
+      // Form
+      .authentication-login-form > * + * {
+        margin-top: 1.5rem;
+      }
+
+      .authentication-login-form {
+        .authentication-password-container {
+          position: relative;
+          .password-hide-and-show-icons-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin-right: 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.25;
+            z-index: 99;
+            .password-icon {
+              height: 1rem;
+              color: $primary;
+              cursor: pointer;
+              fill: none;
+            }
+            .password-icon:hover {
+              color: $primaryHover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.authentication-bottom-background-overlay {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@media (min-width: $md) {
+  .authentication-bottom-background-overlay {
+    display: block;
+  }
+}
+
+.authentication-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+  bottom: 0;
+  line-height: 1.25rem; /* or 20px if the root font size is 16px */
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
