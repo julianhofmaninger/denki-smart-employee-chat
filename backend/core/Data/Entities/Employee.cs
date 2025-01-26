@@ -13,6 +13,9 @@ namespace core.Data.Entities
         public string Lastname { get; set; }
         public string Password { get; set; }
         public bool IsHR { get; set; }
+        // Relations
+        public Guid ClientId { get; set; }
+        public Client Client { get; set; }
         public ICollection<Message> SentMessages { get; set; }
         public ICollection<Message> ReceivedMessages { get; set; }
         public ICollection<FlaggedChat> FlaggedChats { get; set; }

@@ -21,6 +21,7 @@ namespace core.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<FlaggedChat> FlaggedChats { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -29,6 +30,7 @@ namespace core.Data
             builder.Entity<Message>().HasOne(m => m.Sender).WithMany(e => e.SentMessages).HasForeignKey(m => m.SenderId).HasPrincipalKey(e => e.Id);
             builder.Entity<Message>().HasOne(m => m.Receiver).WithMany(e => e.ReceivedMessages).HasForeignKey(m => m.ReceiverId).HasPrincipalKey(e => e.Id);
             builder.Entity<FlaggedChat>().HasOne(fc => fc.Employee).WithMany(e => e.FlaggedChats).HasForeignKey(fc => fc.EmployeeId).HasPrincipalKey(e => e.Id);
+            builder.Entity<Client>().HasOne(client => client.Employee).WithOne(employee => employee.Client).HasForeignKey<Client>(client => client.EmployeeId).HasPrincipalKey<Employee>(employee => employee.Id); 
             
 
             foreach (var property in GetType().GetProperties())
